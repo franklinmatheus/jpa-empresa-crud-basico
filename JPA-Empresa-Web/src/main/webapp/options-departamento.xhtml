@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Departamento</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <p><h:link value="Home" outcome="index"/> > <h:link value="List" outcome="list"/> > Options</p>
+        <hr/>
+        <div>
+            <f:view>
+                <b><h:outputLabel value="Departamento: " /></b>
+                <h:outputLabel value="#{MBDepartamento.departamento.nome}"/>
+            </f:view>
+            <hr/>
+            <f:view>
+                <b><h:outputLabel value="Chefe: " /></b>
+                <h:outputLabel value="#{MBDepartamento.departamento.chefe.nome}"/>
+            </f:view>
+            <hr/>
+            <h3>Update the values:</h3>
+            <f:view>
+                <h:form>
+                    <h:outputLabel for="name" value="Insert the new name: "/>
+                    <h:inputText id="name" title="The name is:" value="#{MBDepartamento.departamento.nome}" required="true" maxlength="30"/>
+                    <br/>
+                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}"/>
+                </h:form>
+            </f:view>
+            <hr/>
+            <f:view>
+                <b><h:outputLabel value="Funcionários: " /></b>
+                <h:dataTable value="#{MBDepartamento.departamento.funcionarios}" var="current">
+                    <h:column><b>Funcionario: </b></h:column>
+                    <h:column>#{current.nome}</h:column>
+                    <h:column><b>Salário: </b></h:column>
+                    <h:column>#{current.salario}</h:column>
+                </h:dataTable>
+            </f:view>
+            <hr/>
+        </div>
+    </body>
+</html>

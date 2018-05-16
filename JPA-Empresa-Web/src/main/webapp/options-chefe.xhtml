@@ -9,7 +9,7 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head>
-        <title>Funcionario</title>
+        <title>Chefe</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
@@ -17,30 +17,26 @@ and open the template in the editor.
         <hr/>
         <div>
             <f:view>
-                <h:dataTable value="#{funcionarioManaged.funcionario}" var="current">
-                    <h:column><b>Funcionario: </b></h:column>
-                    <h:column>#{current.nome}</h:column>
-                    <h:column><b>Salário: </b></h:column>
-                    <h:column>#{current.salario}</h:column>
-                    <h:column><b>Departamento: </b></h:column>
-                    <h:column>#{current.departamento.nome}</h:column>
-                </h:dataTable>
+                <b><h:outputLabel value="Nome: " /></b>
+                <h:outputLabel value="#{MBChefe.chefe.nome}"/>
+                <b><h:outputLabel value="Chefe do departamento: " /></b>
+                <h:outputLabel value="#{MBChefe.chefe.departamento.nome}"/>
             </f:view>
             <hr/>
             <h3>Update the values:</h3>
             <f:view>
                 <h:form>
                     <h:outputLabel for="name" value="Insert the new name: "/>
-                    <h:inputText id="name" title="The name is:" value="#{funcionarioManaged.funcionario.nome}" required="true" maxlength="30"/>
+                    <h:inputText id="name" title="The name is:" value="#{MBChefe.chefe.nome}" required="true" maxlength="30"/>
                     <br/>
                     <h:outputLabel for="salary" value="Insert the new salary: "/>
-                    <h:inputText id="salary" title="The salary is:" value="#{funcionarioManaged.funcionario.salario}" required="true" maxlength="10"/>
+                    <h:inputText id="salary" title="The salary is:" value="#{MBChefe.chefe.salario}" required="true" maxlength="10"/>
                     <br/>
-                    <h:selectOneMenu value="#{funcionarioManaged.funcionario.departamento}">
+                    <h:selectOneMenu value="#{MBChefe.chefe.departamento}">
                         <h:outputLabel for="departament" value="Insert the new departament: "/>
                         <f:selectItems value="#{MBDepartamento.list}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento}"/>
                     </h:selectOneMenu>
-                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}"/>
+                    <h:commandButton id="submit" value="Update" actionListener="#{MBChefe.update()}"/>
                 </h:form>
             </f:view>
         </div>

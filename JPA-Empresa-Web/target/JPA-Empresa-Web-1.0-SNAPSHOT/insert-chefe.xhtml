@@ -24,6 +24,10 @@ and open the template in the editor.
                     <h:outputLabel for="salary" value="Insert your salary: "/>
                     <h:inputText id="salary" title="The salary is:" value="#{MBChefe.chefe.salario}" required="true" requiredMessage="Error! A salary is required!" maxlength="10"/>
                     <br/>
+                    <h:selectOneMenu value="#{MBChefe.chefe.departamento}" converter="generic">
+                        <f:selectItems value="#{MBDepartamento.list}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento}" />
+                    </h:selectOneMenu>
+                    <br/>
                     <h:commandButton id="submit" value="Cadastrar" actionListener="#{MBChefe.add}"/>
                 </h:form>
             </f:view>

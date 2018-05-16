@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,10 +37,11 @@ public class Departamento implements Serializable, SampleEntity {
     @Column(name = "NOME")
     private String nome;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Funcionario> funcionarios = new ArrayList<>();
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CHEFE_ID", nullable = true)
     private Chefe chefe;
 
     public Departamento() { }

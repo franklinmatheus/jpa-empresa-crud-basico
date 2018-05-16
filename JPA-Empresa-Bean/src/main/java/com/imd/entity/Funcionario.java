@@ -37,7 +37,7 @@ public class Funcionario implements Serializable, SampleEntity {
     @Column(name = "SALARIO")
     private double salario;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "DEPARTAMENTO_ID", nullable = true)
     private Departamento departamento;
     
@@ -79,7 +79,6 @@ public class Funcionario implements Serializable, SampleEntity {
 
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
-        System.out.println(this.departamento.getNome());
     }
 
     @Override

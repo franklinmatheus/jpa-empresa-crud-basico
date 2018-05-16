@@ -8,6 +8,7 @@ package com.imd.entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,8 +36,8 @@ public class Chefe implements Serializable, SampleEntity {
     @Column(name = "SALARIO")
     private double salario;
     
-    @OneToOne(optional = true)
-    @JoinColumn(name = "DEPARTAMENTO_ID", nullable = true, updatable = true)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "DEPARTAMENTO_ID", nullable = true)
     private Departamento departamento;
     
     public Chefe() { }
@@ -70,7 +71,7 @@ public class Chefe implements Serializable, SampleEntity {
         return departamento;
     }
 
-    public void setId_dep(Departamento departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 
