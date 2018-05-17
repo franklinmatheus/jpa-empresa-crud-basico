@@ -29,8 +29,6 @@ public class DepartamentoDAO {
         try {
             entityManager.persist(departamento);
         } catch(Exception e) {
-            System.out.println("DEP cause: " + e.getCause());
-            System.out.println("DEP message: " + e.getMessage());
             throw new DatabaseException();
         }
     }

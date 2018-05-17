@@ -32,8 +32,7 @@ and open the template in the editor.
             <h3>Update the values:</h3>
             <f:view>
                 <h:form>
-                    <h:outputLabel for="name" value="Insert the new id: "/>
-                    <h:inputText id="id" disabled="true" value="#{funcionarioManaged.funcionario.id}" required="true" maxlength="30"/>
+                    <h:inputHidden id="id" value="#{funcionarioManaged.funcionario.id}" required="true"/>
                     <br/>
                     <h:outputLabel for="name" value="Insert the new name: "/>
                     <h:inputText id="name" title="The name is:" value="#{funcionarioManaged.funcionario.nome}" required="true" maxlength="30"/>
@@ -45,7 +44,7 @@ and open the template in the editor.
                         <h:outputLabel for="departament" value="Insert the new departament: "/>
                         <f:selectItems value="#{MBDepartamento.list}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento}"/>
                     </h:selectOneMenu>
-                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}">
+                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}" action="options-funcionario">
                     </h:commandButton>
                 </h:form>
             </f:view>

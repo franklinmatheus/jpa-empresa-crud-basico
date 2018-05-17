@@ -38,10 +38,10 @@ public class Departamento implements Serializable, SampleEntity {
     @Column(name = "NOME")
     private String nome;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
     private List<Funcionario> funcionarios  = new ArrayList<>();
     
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(mappedBy = "departamento", fetch = FetchType.EAGER)
     @JoinColumn(name = "CHEFE_ID", nullable = true)
     private Chefe chefe;
 

@@ -39,7 +39,10 @@ public class FuncionarioDAO {
     }
     
     public void update(Funcionario funcionario) {
-        entityManager.refresh(funcionario);
+        Funcionario temporal = entityManager.find(Funcionario.class, funcionario.getId());
+        temporal.setNome(funcionario.getNome());
+        temporal.setSalario(funcionario.getSalario());
+        temporal.setDepartamento(funcionario.getDepartamento());
     }
     
     public Funcionario findById(long id) {

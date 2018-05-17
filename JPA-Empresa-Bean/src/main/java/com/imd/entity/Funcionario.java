@@ -24,7 +24,7 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 @NamedQuery(name = "findAllFuncionarios", query = "SELECT f FROM Funcionario f")
-public class Funcionario implements Serializable, SampleEntity {
+public class Funcionario implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "SEQ_FUNCIONARIO")
@@ -49,8 +49,7 @@ public class Funcionario implements Serializable, SampleEntity {
         this.departamento = null;
     }
 
-    @Override
-    public Long getId() {
+    public long getId() {
         return id;
     }
     
