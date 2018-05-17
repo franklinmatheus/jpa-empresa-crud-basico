@@ -20,6 +20,8 @@ and open the template in the editor.
                 <h:dataTable value="#{funcionarioManaged.funcionario}" var="current">
                     <h:column><b>Funcionario: </b></h:column>
                     <h:column>#{current.nome}</h:column>
+                    <h:column><b>ID: </b></h:column>
+                    <h:column>#{current.id}</h:column>
                     <h:column><b>Salário: </b></h:column>
                     <h:column>#{current.salario}</h:column>
                     <h:column><b>Departamento: </b></h:column>
@@ -30,17 +32,21 @@ and open the template in the editor.
             <h3>Update the values:</h3>
             <f:view>
                 <h:form>
+                    <h:outputLabel for="name" value="Insert the new id: "/>
+                    <h:inputText id="id" disabled="true" value="#{funcionarioManaged.funcionario.id}" required="true" maxlength="30"/>
+                    <br/>
                     <h:outputLabel for="name" value="Insert the new name: "/>
                     <h:inputText id="name" title="The name is:" value="#{funcionarioManaged.funcionario.nome}" required="true" maxlength="30"/>
                     <br/>
-                    <h:outputLabel for="salary" value="Insert the new salary: "/>
-                    <h:inputText id="salary" title="The salary is:" value="#{funcionarioManaged.funcionario.salario}" required="true" maxlength="10"/>
+                    <h:outputLabel for="name" value="Insert the new salary: "/>
+                    <h:inputText id="salario" title="The salary is:" value="#{funcionarioManaged.funcionario.salario}" required="true" maxlength="30"/>
                     <br/>
-                    <h:selectOneMenu value="#{funcionarioManaged.funcionario.departamento}">
+                    <h:selectOneMenu value="#{funcionarioManaged.funcionario.departamento}" converter="generic">
                         <h:outputLabel for="departament" value="Insert the new departament: "/>
                         <f:selectItems value="#{MBDepartamento.list}" var="departamento" itemLabel="#{departamento.nome}" itemValue="#{departamento}"/>
                     </h:selectOneMenu>
-                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}"/>
+                    <h:commandButton id="submit" value="Update" actionListener="#{funcionarioManaged.update()}">
+                    </h:commandButton>
                 </h:form>
             </f:view>
         </div>

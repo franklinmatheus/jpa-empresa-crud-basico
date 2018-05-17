@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -21,31 +22,32 @@ import javax.inject.Named;
 @Named(value = "funcionarioManaged")
 @RequestScoped
 public class MBFuncionario implements Serializable {
+
     @EJB
     FuncionarioDAO dao;
     private Funcionario funcionario = new Funcionario();
-    
+
     public void add() {
         try {
             dao.insert(funcionario);
             this.reset();
-        } catch(DatabaseException e) {
+        } catch (DatabaseException e) {
             /* empty */
         }
     }
-    
+
     public void remove(Funcionario funcionario) {
         dao.delete(funcionario);
     }
-    
+
     private void reset() {
         funcionario = new Funcionario();
     }
-    
+
     public void update() {
-       dao.update(funcionario);
+        dao.update(funcionario);
     }
-    
+
     public List<Funcionario> getList() {
         return dao.selectAll();
     }

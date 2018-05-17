@@ -39,7 +39,7 @@ public class Departamento implements Serializable, SampleEntity {
     private String nome;
     
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Funcionario> funcionarios = new ArrayList<>();
+    private List<Funcionario> funcionarios  = new ArrayList<>();
     
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CHEFE_ID", nullable = true)

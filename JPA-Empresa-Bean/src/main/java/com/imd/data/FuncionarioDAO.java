@@ -39,7 +39,7 @@ public class FuncionarioDAO {
     }
     
     public void update(Funcionario funcionario) {
-        entityManager.merge(funcionario);
+        entityManager.refresh(funcionario);
     }
     
     public Funcionario findById(long id) {
