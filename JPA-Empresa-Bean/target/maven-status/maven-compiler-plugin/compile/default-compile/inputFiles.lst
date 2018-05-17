@@ -1,9 +1,0 @@
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/entity/SampleEntity.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/data/FuncionarioDAO.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/entity/Funcionario.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/exception/DatabaseException.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/data/ChefeDAO.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/data/DepartamentoDAO.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/entity/Departamento.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/entity/Chefe.java
-/home/franklin/NetBeansProjects/JPA-Empresa-Basic/JPA-Empresa-Bean/src/main/java/com/imd/entity/GenericConverter.java

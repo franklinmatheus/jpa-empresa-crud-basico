@@ -1,9 +1,0 @@
-com/imd/entity/SampleEntity.class
-com/imd/entity/Funcionario.class
-com/imd/entity/Chefe.class
-com/imd/entity/Departamento.class
-com/imd/data/FuncionarioDAO.class
-com/imd/entity/GenericConverter.class
-com/imd/data/ChefeDAO.class
-com/imd/exception/DatabaseException.class
-com/imd/data/DepartamentoDAO.class
